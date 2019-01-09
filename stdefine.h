@@ -5,6 +5,7 @@
 #if defined(WIN32)
 #include <windows.h>
 #else
+#include <stdint.h>
 #define TRUE     1
 #define FALSE    0
 typedef int      BOOL ;
