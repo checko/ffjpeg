@@ -447,7 +447,7 @@ int jfif_decode(void *ctxt, BMP *pb)
     }
 
     // open bit stream
-    bs = bitstr_open(BITSTR_MEM, (char*)jfif->databuf, (char*)jfif->datalen);
+    bs = bitstr_open(BITSTR_MEM, (char*)jfif->databuf, NULL,jfif->datalen);
     if (!bs) {
         printf("failed to open bitstr for jfif_decode !");
         return -1;
@@ -691,7 +691,7 @@ void* jfif_encode(BMP *pb)
     memcpy(jfif->pqtab[1], STD_QUANT_TAB_CHROM, 64*sizeof(int));
 
     // open bit stream
-    bs = bitstr_open(BITSTR_MEM, (char*)jfif->databuf, (char*)jfif->datalen);
+    bs = bitstr_open(BITSTR_MEM, (char*)jfif->databuf, NULL,jfif->datalen);
     if (!bs) {
         printf("failed to open bitstr for jfif_decode !");
         goto done;
